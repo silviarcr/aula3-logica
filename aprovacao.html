@@ -1,0 +1,64 @@
+
+<h2>VERIFIQUE APROVAÇÃO</h2>
+<form onsubmit=" return validaNota()">  <!--onsubmit -> se clicar botão, executacodigo-->
+    <label>Nota 1:</label>
+    <input id="nota1" type="text"> <br>
+    <label>Nota 2:</label>
+    <input id="nota2" type="text"> <br>
+    <label>Nota 2:</label>
+    <input id="nota3" type="text"> <br>
+    <button type="submit">Verificar</button>
+</form>
+
+<p id = "mensagem"></p>
+<!--JAVASCRIPT-->
+<script>
+    function validaNota() {
+        //entrada        
+            var inputNota1 = document.getElementById("nota1");
+            var nota1 = inputNota1.value;
+            var inputNota2 = document.getElementById("nota2");
+            var nota2 = inputNota2.value;
+            var inputNota3 = document.getElementById("nota3");
+            var nota3 = inputNota3.value;
+            
+            var paragrafoMensagem = document.getElementById("mensagem");
+            nota1 = parseInt(nota1);
+            nota2 = parseInt(nota2);
+            nota3 = parseInt(nota3);
+
+              if ( isNaN(nota1) && isNaN(nota2) && isNaN(nota3) )  {
+                //saida
+                paragrafoMensagem.textContent("Digite somente números");
+                //return false;
+            }
+
+            // PROCESSAMENTO
+            // if ( nota1 == "" || nota2 == "" || nota3 == ""  )
+            // {
+            // //saida
+            //     paragrafoMensagem.textContent = "Por favor preencha as notas";
+            //     return false;
+            // }
+
+            
+            
+          
+            
+           // return false;
+    }
+    
+     
+    //  if ( 
+    //      ( !isNaN(nota1) > 0 )
+    //       && ( !isNaN(nota2) > 0 ) && 
+    //       ( !isNaN(nota3) > 0 )  
+    //       )
+    //       {
+    //         var media = (nota1 + nota2 + nota3) / 3;
+    //       }
+     
+         
+    //      alert("A média é: " + media);
+
+</script>
