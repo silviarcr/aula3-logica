@@ -1,0 +1,25 @@
+<!--Exercicio idade-->
+<!--JAVASCRIPT-->
+
+<h2>CÁLCULO ANO NASCIMENTO</h2>
+<form onsubmit="return calculaIdade()">
+    <label>Qual sua idade?</label>
+    <input id="idade" type="text"> <br>
+    <label>Qual o ano atual?</label>
+    <input id="ano" type="text"> <br>
+    <button type="submit">Enviar</button>
+</form>
+<p id="mensagem"><p>
+
+<script>
+    function calculaIdade(){
+        var idade = document.getElementById("idade").value;
+        var ano = document.getElementById("ano").value;
+        var paragrafoMensagem = document.getElementById("mensagem");
+
+        var anoNascimento = ano - parseInt(idade);
+
+        paragrafoMensagem.textContent = "Ano de nascimento é " + anoNascimento;
+        return false;
+    }
+  </script>

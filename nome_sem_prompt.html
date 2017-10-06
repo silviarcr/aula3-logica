@@ -1,0 +1,27 @@
+
+<form onsubmit="return preencheNome()">
+    <label>Digite seu nome</label>
+    <input id="nome" type="text"> <br>
+    <button type="submit">Enviar</button>
+</form>
+
+<p id="mensagem"></p>
+<script>
+    //entrada
+    function preencheNome(){
+    var nome = document.getElementById("nome").value;
+    var paragrafoMensagem = document.getElementById("mensagem");
+
+
+    if (nome == "") {
+          paragrafoMensagem.textContent = "Você não preencheu o nome";
+          //return false;
+    }
+    else{
+         paragrafoMensagem.textContent = "Seja bem-vinda(o), " + nome + "!!!";
+         //return false;
+    }
+
+ return false;
+}
+</script>

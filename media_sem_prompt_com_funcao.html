@@ -1,0 +1,48 @@
+
+<!--Exercicio media de 3 númerps-->
+<html>
+    <!--<h1>EXERCÍCIO MÉDIA DE 3 NÚMEROS</h1>-->
+    <h2>Calculadora de média</h2>
+</html>
+
+<form onsubmit="return calculaMedia()">
+            <label>Nota 1:</label> 
+            <input id= "n1" type="text">   <br>
+            <label>Nota 2:</label> 
+            <input id= "n2" type="text">  <br>
+            <button type="submit">Responder</button>
+</form>
+
+<p id="mensagem"></p>
+<!--JAVASCRIPT-->
+
+<script>
+    function calculaMedia(){
+    //entrada        
+    var n1 = document.getElementById("n1").value;
+    var n2 = document.getElementById("n2").value;
+    var paragrafoMensagem = document.getElementById("mensagem");
+
+    // function mostraMedia(num1,num2){
+    //    return ( parseInt(n1) + parseInt(n2) ) / 2;
+    //    }
+    if (n1 == "" || n2 == "") {
+        //saida
+        paragrafoMensagem.textContent = "Por favor preencha os números";
+        return false;
+       } 
+    //saida
+    var media = mostraMedia(n1,n2);
+    paragrafoMensagem.textContent = "A média é " + media;
+    return false;
+
+      function mostraMedia(num1,num2){
+            media = ( parseInt(n1) + parseInt(n2) ) / 2;
+            return media; 
+       }
+}
+
+     
+
+
+</script>
