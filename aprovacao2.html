@@ -1,0 +1,64 @@
+<h2>VERIFIQUE APROVAÇÃO</h2>
+<form onsubmit=" return validaNota()">
+    <!--onsubmit -> se clicar botão, executacodigo-->
+    <label>Nota 1:</label>
+    <input id="nota1" type="text"> <br>
+    <label>Nota 2:</label>
+    <input id="nota2" type="text"> <br>
+    <label>Nota 2:</label>
+    <input id="nota3" type="text"> <br>
+    <button type="submit">Verificar</button>
+</form>
+
+<p id="mensagem"></p>
+<!--JAVASCRIPT-->
+<script>
+    function validaNota() {
+        //entrada        
+        // var inputNota1 = document.getElementById("nota1");
+        // var inputNota2 = document.getElementById("nota2");
+        // var inputNota3 = document.getElementById("nota3");
+        var nota1 = document.getElementById("nota1").value;
+        var nota2 = document.getElementById("nota2").value;
+        var nota3 = document.getElementById("nota3").value;
+        var paragrafoMensagem = document.getElementById("mensagem");
+
+        //  PROCESSAMENTO
+        if (nota1 == "" || nota2 == "" || nota3 == "") {
+            //saida
+            paragrafoMensagem.textContent = "Por favor preencha as notas";
+            return false;
+        } 
+        //  nota1 = parseFloat(nota1);
+        //  nota2 = parseFloat(nota2);
+        //  nota3 = parseFloat(nota3);
+        
+         if ( isNaN(nota1 = parseFloat(nota1)) || isNaN(nota2 = parseFloat(nota2)) || isNaN(nota3 = parseFloat(nota3)) ) 
+         {
+                //saida
+                paragrafoMensagem.textContent = "Digite somente números";
+                return false;
+         } 
+
+         if (nota1 < 0 || nota2 < 0 || nota3 < 0) {
+              //saida
+              paragrafoMensagem.textContent = "Digite um número positivo";
+              return false;
+         }
+
+        var media = (nota1 + nota2 + nota3) / 3;
+        if (media >= 6) {
+            //saida
+            paragrafoMensagem.textContent = "Aluno aprovado";
+        } else {
+             //saida
+             paragrafoMensagem.textContent = "Aluno reprovado";
+         }
+
+    return false;
+}
+</script>
+
+
+
+        
